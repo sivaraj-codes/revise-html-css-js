@@ -1,0 +1,64 @@
+.main {
+    background-color: green;
+}
+
+.main1 {
+    background-color: yellowgreen;
+}
+
+/* tableStyle    */
+.table-section-wrapper::-webkit-scrollbar {
+    width: .35rem;
+}
+
+.table-section-wrapper::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: .25rem;
+}
+.table-section-wrapper {
+    width: 400px;
+    max-height: 120px;
+    overflow-y: auto;
+    outline: 1px dotted red;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+table>caption {
+    position: sticky;
+    top: 0px;
+    background: rgb(235, 235, 235);
+    z-index: 2;
+}
+
+thead {
+    position: sticky;
+    top: 18px;
+    background: rgb(235, 235, 235);
+    z-index: 2;
+}
+
+tfoot {
+    position: sticky;
+    bottom: 0;
+    background: rgb(66, 66, 66);
+    color: #fff;
+    z-index: 2;
+}
+
+td,
+th {
+    border: 1px solid #bebebe;
+    padding: 5px 20px;
+    text-align: center;
+}
+
+tbody tr:nth-child(even) td {
+    background-color: rgb(239, 171, 171);
+}
+
+tbody tr:nth-child(odd) td {
+    background-color: rgb(231, 138, 138);
+}

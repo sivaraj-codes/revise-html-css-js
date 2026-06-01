@@ -1,0 +1,158 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: aqua;
+    display: flex;
+    justify-content: space-between;
+    /* border: 10px dotted red; */
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 3.5rem;
+    padding: 1rem;
+
+    nav {
+        display: flex;
+        gap: 1rem
+    }
+}
+
+main {
+    margin-block: 3.5rem 5rem;
+}
+
+.content-wrapper {
+    padding: 10px;
+}
+
+footer {
+    text-align: center;
+    background-color: bisque;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+section {
+    margin-block-end: 1rem;
+}
+p {
+    text-indent: 2em;
+}
+
+/* products */
+.products-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+    gap: 1rem;
+    /* optional spacing */
+}
+.product-wrapper {
+    --max-lines:3;
+    inline-size: 14rem;
+    min-block-size: 20rem;
+}
+
+.product-card-body {
+    display: grid;
+}
+
+.product-title {
+    display: -webkit-box;
+    -webkit-line-clamp: var(--max-lines);
+    line-clamp: var(--max-lines);
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.4em;
+    max-height: calc(1.4em * var(--max-lines));
+}
+
+a.product-rating-row {
+    text-decoration: none;
+}
+
+.product-rating {
+    color: orange;
+}
+
+.produc-card-header{
+    /* position: relative; */
+    padding-block-end: 0.5rem;
+}
+/* .produc-card-header>.product-rank{
+    position: absolute;
+} */
+
+.rank-badge {
+    background: #c45500;
+    color: #fff;
+
+    font-weight: 700;
+    font-size: 0.875rem;
+    /* 14px */
+
+    line-height: 1;
+
+    padding: 0.25rem 0.75rem;
+    /* 4px 12px */
+
+    display: inline-flex;
+    align-items: center;
+
+    white-space: nowrap;
+    position: relative;
+}
+
+.rank-badge::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -0.5625rem;
+    /* -9px */
+
+    width: 0;
+    height: 0;
+
+    border-top: 1.4375rem solid #c45500;
+    /* 23px */
+    border-right: 0.5625rem solid transparent;
+    /* 9px */
+}
+
+section>h2 {
+    position: sticky;
+    top: 3.5rem;
+    background-color: #fff;
+}
+
+
+.c5{
+    text-align: justify;
+    img{
+        width: 20em;
+        aspect-ratio: 0.7;
+        float: left;
+        margin-right: 1em;
+    }
+}
+
+.products{
+    clear: both;
+}
+
+p::first-letter{
+    font-weight: bold;
+    color: red;
+    font-size: 2rem;
+    font-variant: small-caps;
+}
+
+::selection{
+    /* background-color: grey; */
+    /* color: brown; */
+}
