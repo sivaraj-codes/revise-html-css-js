@@ -1,0 +1,33 @@
+.star {
+    font-size: 20px
+}
+
+.fill-star {
+    color: gold;
+}
+
+.half-star {
+    background: linear-gradient(to right, gold 60%, black 40%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.dmk-color {
+    background: linear-gradient(to bottom, red 50%, black 50%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.aiadmk-color {
+    /* background:linear-gradient(  to bottom,
+  red 60%,
+  white 60%,
+  white 70%,
+  black 70%); */
+    background: linear-gradient(to bottom,
+            red 0%,
+            yellow 50%,
+            black 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
