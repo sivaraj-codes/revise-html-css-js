@@ -11,25 +11,33 @@
 <body>
     <h1>CSS Carousel</h1>
     <h2>CSS Marquee Style Infinite Carousel</h2>
-    <div class="carousal-wrapper">
-        <div class="caroural-items-wrapper">
-            <img src="./assets/images/c-image1.jpg" alt="">
-            <img src="./assets/images/c-image2.jpg" alt="">
-            <img src="./assets/images/c-image3.webp" alt="">
-            <img src="./assets/images/c-image4.jpg" alt="">
-            <img src="./assets/images/c-image1.jpg" alt="">
-            <img src="./assets/images/c-image2.jpg" alt="">
-            <img src="./assets/images/c-image3.webp" alt="">
-            <img src="./assets/images/c-image4.jpg" alt="">
-        </div>
 
+    <div class="carousal-wrapper">
+        <div class="track">
+            <div class="group">
+                <div class="slide"><img src="./assets/images/c-image1.jpg" alt=""></div>
+                <div class="slide"><img src="./assets/images/c-image2.jpg" alt=""></div>
+                <div class="slide"><img src="./assets/images/c-image3.webp" alt=""></div>
+                <div class="slide"><img src="./assets/images/c-image4.jpg" alt=""></div>
+            </div>
+
+            <div class="group" aria-hidden="true">
+                <div class="slide"><img src="./assets/images/c-image1.jpg" alt=""></div>
+                <div class="slide"><img src="./assets/images/c-image2.jpg" alt=""></div>
+                <div class="slide"><img src="./assets/images/c-image3.webp" alt=""></div>
+                <div class="slide"><img src="./assets/images/c-image4.jpg" alt=""></div>
+            </div>
+        </div>
     </div>
+
     <h2>Pure CSS Scroll-Snap Carousel</h2>
     <div class="ss-carousal-wrapper">
         <div class="slide">1</div>
         <div class="slide">2</div>
         <div class="slide">3</div>
         <div class="slide">4</div>
+        <div class="slide">5</div>
+        <div class="slide">6</div>
     </div>
     <h2>New CSS Scroll State,marker,button Carousel</h2>
     <div class="scroll-layout">

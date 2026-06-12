@@ -1,11 +1,36 @@
-.carousal-wrapper {
-    overflow: hidden;
+html {
+    scroll-behavior: smooth;
 }
 
-.caroural-items-wrapper {
+/* infinite scroll */
+.carousal-wrapper {
+    overflow: hidden;
+    max-width: 700px;
+}
+
+.track {
     display: flex;
     width: max-content;
-    animation: marquee 15s linear infinite;
+    animation: marquee 10s linear infinite;
+    border: 2px solid red;
+    padding: 2px;
+}
+
+.group {
+    display: flex;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.carousal-wrapper .slide {
+    flex-shrink: 0;
+}
+
+.slide img {
+    display: block;
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
 }
 
 @keyframes marquee {
@@ -14,6 +39,7 @@
     }
 
     to {
+        /* transform: translateX(calc(-100% / 2)); */
         transform: translateX(-50%);
     }
 }
@@ -24,19 +50,19 @@
     overflow-x: auto;
 
     scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
+
 
     gap: 16px;
     max-width: 450px;
 }
 
-.slide {
+.ss-carousal-wrapper .slide {
     min-width: 300px;
     height: 200px;
 
     background: lightblue;
 
-    scroll-snap-align: start;
+    scroll-snap-align: center;
 
     display: flex;
     justify-content: center;
