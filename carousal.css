@@ -1,0 +1,211 @@
+.carousal-wrapper {
+    overflow: hidden;
+}
+
+.caroural-items-wrapper {
+    display: flex;
+    width: max-content;
+    animation: marquee 15s linear infinite;
+}
+
+@keyframes marquee {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* Scroll SNap */
+.ss-carousal-wrapper {
+    display: flex;
+    overflow-x: auto;
+
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+
+    gap: 16px;
+    max-width: 450px;
+}
+
+.slide {
+    min-width: 300px;
+    height: 200px;
+
+    background: lightblue;
+
+    scroll-snap-align: start;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 2rem;
+}
+
+/* =========================
+   new statful carousel Layout
+   ========================= */
+
+.scroll-layout {
+    display: grid;
+    grid-template-areas:
+        "scroll scroll scroll"
+        "left markers right";
+
+    grid-template-columns: auto 1fr auto;
+    gap: 1rem;
+
+    max-width: 900px;
+    margin: 2rem auto;
+}
+
+/* =========================
+   Carousel
+   ========================= */
+
+.carousel {
+    grid-area: scroll;
+
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    overscroll-behavior-x: contain;
+
+    scroll-marker-group: after;
+
+    scrollbar-width: none;
+}
+
+.carousel::-webkit-scrollbar {
+    display: none;
+}
+
+/* =========================
+   Slides
+   ========================= */
+
+.content {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 100%;
+
+    gap: 1rem;
+
+    margin: 0;
+    padding: 0;
+}
+
+.content li {
+    list-style: none;
+
+    height: 350px;
+
+    display: grid;
+    place-items: center;
+
+    font-size: 4rem;
+    font-weight: bold;
+
+    background: #f3f4f6;
+    border-radius: 16px;
+
+    scroll-snap-align: center;
+}
+
+/* =========================
+   Scroll Buttons
+   ========================= */
+
+.carousel::scroll-button(*) {
+    width: 48px;
+    height: 48px;
+
+    border: none;
+    border-radius: 999px;
+
+    background: #111827;
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 20px;
+
+    transition: all 0.2s ease;
+    /* display: none; */
+}
+
+.carousel::scroll-button(*):hover:not(:disabled) {
+    transform: scale(1.05);
+}
+
+.carousel::scroll-button(*):active:not(:disabled) {
+    transform: scale(0.95);
+}
+
+.carousel::scroll-button(*):disabled {
+    opacity: 0.35;
+    cursor: default;
+}
+
+/* Left Button */
+
+.carousel::scroll-button(left) {
+    content: "←";
+    grid-area: left;
+}
+
+/* Right Button */
+
+.carousel::scroll-button(right) {
+    content: "→";
+    grid-area: right;
+}
+
+/* =========================
+   Marker Container
+   ========================= */
+
+.carousel::scroll-marker-group {
+    grid-area: markers;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 12px;
+}
+
+/* =========================
+   Individual Marker
+   ========================= */
+
+.carousel>.content>li::scroll-marker {
+    content: "";
+
+    width: 12px;
+    height: 12px;
+
+    border-radius: 50%;
+
+    border: 2px solid #9ca3af;
+    background: transparent;
+
+    transition: all 0.2s ease;
+}
+
+/* Hover */
+
+.carousel>.content>li::scroll-marker:hover {
+    border-color: #2563eb;
+}
+
+/* Active Marker */
+
+.carousel>.content>li::scroll-marker:target-current {
+    background: #2563eb;
+    border-color: #2563eb;
+
+    transform: scale(1.25);
+}
