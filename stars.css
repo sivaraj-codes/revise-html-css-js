@@ -1,14 +1,38 @@
-.star {
-    font-size: 20px
+*,
+::after,
+::before {
+    margin: 0;
+    box-sizing: border-box;
 }
+
+.content-wrapper {
+    width: 100%;
+    height: 100dvh;
+}
+
+body {
+    font-size: 2rem;
+    /* background: radial-gradient(circle at top,
+            #18b8c9 0%,
+            #0c8797 45%,
+            #07596a 100%); */
+
+    background: linear-gradient(135deg,
+            #0ea5b7 0%,
+            #096575 100%);
+}
+
+/* .star {
+    font-size: 20px
+} */
 
 .fill-star {
     color: gold;
 }
 
 .half-star {
-    background: linear-gradient(to right, gold 60%, black 40%);
-    -webkit-background-clip: text;
+    background: linear-gradient(to right, gold 50%, black 40%);
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -25,9 +49,18 @@
   white 70%,
   black 70%); */
     background: linear-gradient(to bottom,
-            red 0%,
-            yellow 50%,
+            /* red 0%, */
+            red 45%,
+            rgb(255, 255, 255) 45%,
+            rgb(255, 255, 255) 60%,
+            black 60%,
             black 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.tvk-color {
+    background: linear-gradient(to bottom, red 35%, yellow 35%, yellow 65%, red 65%, red 100%);
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }

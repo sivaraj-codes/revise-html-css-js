@@ -2,6 +2,7 @@
 ::after,
 ::before {
     margin: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -25,6 +26,13 @@ body {
     margin: 0;
     padding: 0;
 
+    @media (width > 720px) {
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: start;
+        /* gap: 1rem; */
+    }
+
 }
 
 .nav-list>li {
@@ -34,16 +42,7 @@ body {
     padding-block: 0.5em;
 }
 
-@media (width>720px) {
-    .nav-list {
-        flex-direction: row;
-        justify-content: space-evenly;
-        align-items: start;
-        gap: 1rem;
-    }
 
-
-}
 
 /* cards example */
 .cards-section {
@@ -56,38 +55,35 @@ body {
     flex-direction: column;
     gap: 0.5rem;
     border: 2px solid brown;
+
+    @media (width > 720px) {
+        flex-direction: row;
+        /* flex-wrap: wrap; */
+        gap: 1rem;
+        align-items: center;
+        /* align-items: start; */
+    }
 }
 
 .columns>.card {
     background-color: rgb(247, 185, 110);
     padding: 0.5rem;
     border: 2px solid blue;
-}
 
-@media (width>720px) {
-    .columns {
-        flex-direction: row;
-        /* flex-wrap: wrap; */
-        gap: 1rem;
-        align-items: center;
-        /* align-items: start; */
+    @media (width > 720px) {
+        /* flex-grow: 1;
+        flex-shrink: 1;
+        flex-basis: auto; */
 
-        .card {
+        /* flex: 1; */
+        /* flex-grow: 1;
+        flex-basis: 0;
+        flex-shrink: 1; */
 
-            /* flex-grow: 1;
-                flex-shrink: 1;
-                flex-basis: auto; */
+        flex-shrink: 1;
+        flex-basis: 100%;
 
-            /* flex: 1; */
-            /* flex-grow: 1;
-            flex-basis: 0;
-            flex-shrink: 1; */
-
-            flex-shrink: 1;
-            flex-basis: 100%;
-        }
-
-        .card:nth-child(2) {
+        &:nth-child(2) {
             background-color: aquamarine;
             align-self: flex-start;
         }

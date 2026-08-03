@@ -11,9 +11,10 @@ html {
 .track {
     display: flex;
     width: max-content;
-    animation: marquee 10s linear infinite;
+    animation: marquee 5s linear infinite;
     border: 2px solid red;
     padding: 2px;
+    gap: 10px;
 }
 
 .group {
@@ -47,28 +48,24 @@ html {
 /* Scroll SNap */
 .ss-carousal-wrapper {
     display: flex;
-    overflow-x: auto;
-
-    scroll-snap-type: x mandatory;
-
-
     gap: 16px;
+
     max-width: 450px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
 }
 
 .ss-carousal-wrapper .slide {
     min-width: 300px;
     height: 200px;
-
+    font-size: 2rem;
     background: lightblue;
-
-    scroll-snap-align: center;
 
     display: flex;
     justify-content: center;
     align-items: center;
 
-    font-size: 2rem;
+    scroll-snap-align: center;
 }
 
 /* =========================
@@ -134,7 +131,7 @@ html {
     font-size: 4rem;
     font-weight: bold;
 
-    background: #f3f4f6;
+    background: #84a3e0;
     border-radius: 16px;
 
     scroll-snap-align: center;

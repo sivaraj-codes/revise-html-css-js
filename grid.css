@@ -14,6 +14,14 @@ body {
         "main-aside"
         "footer";
 
+    @media (width>720px) {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "header header"
+            "main main-aside"
+            "footer footer";
+    }
+
 }
 
 main {
@@ -21,6 +29,10 @@ main {
     grid-template-columns: 1fr;
     margin: 2rem;
     grid-area: main;
+
+    @media (width>720px) {
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 header {
@@ -47,22 +59,9 @@ footer {
 
 }
 
-@media (width>720px) {
-    main {
-        grid-template-columns: 1fr 1fr;
-
-    }
-
-    body {
-        grid-template-columns: 1fr 1fr;
-        grid-template-areas:
-            "header header"
-            "main main-aside"
-            "footer footer";
-    }
-
+/* @media (width>720px) {
     .main-aside {
         margin: 2rem;
     }
 
-}
+} */

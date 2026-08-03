@@ -15,6 +15,7 @@
     background: #888;
     border-radius: .25rem;
 }
+
 .table-section-wrapper {
     width: 400px;
     max-height: 120px;
@@ -26,6 +27,7 @@ table {
     width: 100%;
     border-collapse: collapse;
 }
+
 table>caption {
     position: sticky;
     top: 0px;
